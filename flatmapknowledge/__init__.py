@@ -24,6 +24,7 @@ import sqlite3
 #===============================================================================
 
 import mapknowledge
+from mapknowledge.scicrunch import SCICRUNCH_PRODUCTION, SCICRUNCH_STAGING
 
 #===============================================================================
 
@@ -52,14 +53,17 @@ FLATMAP_SCHEMA = """
 
 class KnowledgeStore(mapknowledge.KnowledgeStore):
     def __init__(self, store_directory, knowledge_base=KNOWLEDGE_BASE,
-        clean_connectivity=False, create=True, read_only=False):
+        sckan_version='production', clean_connectivity=False, create=True, read_only=False):
         new_db = not Path(store_directory, knowledge_base).resolve().exists()
         if create and new_db:
             super().__init__(store_directory,
                              knowledge_base=knowledge_base,
                              clean_connectivity=clean_connectivity,
                              create=create,
-                             read_only=False)
+                             read_only=False,
+                             scicrunch_release=SCICRUNCH_PRODUCTION if sckan_version=='production'
+                                          else SCICRUNCH_STAGING
+                             )
             self.db.executescript(FLATMAP_SCHEMA)
             if read_only:
                 super().open(read_only=True)
