@@ -38,7 +38,7 @@ six = "*"
 
 [[package]]
 name = "mapknowledge"
-version = "0.10.5"
+version = "0.10.6"
 description = ""
 category = "main"
 optional = false
@@ -51,7 +51,7 @@ requests = ">=2.28.1,<3.0.0"
 
 [package.source]
 type = "url"
-url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.10.5/mapknowledge-0.10.5-py3-none-any.whl"
+url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.10.6/mapknowledge-0.10.6-py3-none-any.whl"
 [[package]]
 name = "networkx"
 version = "2.8.5"
@@ -140,7 +140,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<4.0"
-content-hash = "f0e1a4728304da099f470de1697debe72da7b162d768221f7f4a95c14bafebe0"
+content-hash = "fbae722defda7836bfce268f1abeb1dec4bb1a4e3c053d9e889e0cb35b1c54c5"
 
 [metadata.files]
 certifi = [
