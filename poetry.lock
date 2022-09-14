@@ -1,6 +1,6 @@
 [[package]]
 name = "certifi"
-version = "2022.6.15.1"
+version = "2022.9.14"
 description = "Python package for providing Mozilla's CA Bundle."
 category = "main"
 optional = false
@@ -19,7 +19,7 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "idna"
-version = "3.3"
+version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
 optional = false
@@ -61,11 +61,11 @@ optional = false
 python-versions = ">=3.8"
 
 [package.extras]
-default = ["matplotlib (>=3.4)", "numpy (>=1.19)", "pandas (>=1.3)", "scipy (>=1.8)"]
-developer = ["mypy (>=0.961)", "pre-commit (>=2.20)"]
-doc = ["nb2plots (>=0.6)", "numpydoc (>=1.4)", "pillow (>=9.1)", "pydata-sphinx-theme (>=0.9)", "sphinx (>=5)", "sphinx-gallery (>=0.10)", "texext (>=0.6.6)"]
-extra = ["lxml (>=4.6)", "pydot (>=1.4.2)", "pygraphviz (>=1.9)", "sympy (>=1.10)"]
-test = ["codecov (>=2.1)", "pytest (>=7.1)", "pytest-cov (>=3.0)"]
+default = ["numpy (>=1.19)", "scipy (>=1.8)", "matplotlib (>=3.4)", "pandas (>=1.3)"]
+developer = ["pre-commit (>=2.20)", "mypy (>=0.961)"]
+doc = ["sphinx (>=5)", "pydata-sphinx-theme (>=0.9)", "sphinx-gallery (>=0.10)", "numpydoc (>=1.4)", "pillow (>=9.1)", "nb2plots (>=0.6)", "texext (>=0.6.6)"]
+extra = ["lxml (>=4.6)", "pygraphviz (>=1.9)", "pydot (>=1.4.2)", "sympy (>=1.10)"]
+test = ["pytest (>=7.1)", "pytest-cov (>=3.0)", "codecov (>=2.1)"]
 
 [[package]]
 name = "pyparsing"
@@ -76,7 +76,7 @@ optional = false
 python-versions = ">=3.6.8"
 
 [package.extras]
-diagrams = ["jinja2", "railroad-diagrams"]
+diagrams = ["railroad-diagrams", "jinja2"]
 
 [[package]]
 name = "rdflib"
@@ -92,8 +92,8 @@ pyparsing = "*"
 
 [package.extras]
 berkeleydb = ["berkeleydb"]
-dev = ["black (==22.6.0)", "flake8", "flakeheaven", "isort", "mypy", "pep8-naming", "types-setuptools"]
-docs = ["myst-parser", "sphinx (<6)", "sphinx-autodoc-typehints", "sphinxcontrib-apidoc", "sphinxcontrib-kroki"]
+dev = ["black (==22.6.0)", "flake8", "isort", "mypy", "pep8-naming", "types-setuptools", "flakeheaven"]
+docs = ["myst-parser", "sphinx (<6)", "sphinxcontrib-apidoc", "sphinxcontrib-kroki", "sphinx-autodoc-typehints"]
 html = ["html5lib"]
 networkx = ["networkx"]
 tests = ["html5lib", "pytest", "pytest-cov"]
@@ -133,27 +133,27 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4"
 
 [package.extras]
-brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
-secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
+brotli = ["brotlicffi (>=0.8.0)", "brotli (>=1.0.9)", "brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "urllib3-secure-extra", "ipaddress"]
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<4.0"
-content-hash = "d5fb90472a8463e3fa02d5a1d0e4362780129e53be3cbc8d7f9f9e8c49a45209"
+content-hash = "baee79de8f00f77c73eac3157df5d533badaf8058f58c5459cd6adc204c3d57f"
 
 [metadata.files]
 certifi = [
-    {file = "certifi-2022.6.15.1-py3-none-any.whl", hash = "sha256:43dadad18a7f168740e66944e4fa82c6611848ff9056ad910f8f7a3e46ab89e0"},
-    {file = "certifi-2022.6.15.1.tar.gz", hash = "sha256:cffdcd380919da6137f76633531a5817e3a9f268575c128249fb637e4f9e73fb"},
+    {file = "certifi-2022.9.14-py3-none-any.whl", hash = "sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516"},
+    {file = "certifi-2022.9.14.tar.gz", hash = "sha256:36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5"},
 ]
 charset-normalizer = [
     {file = "charset-normalizer-2.1.1.tar.gz", hash = "sha256:5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"},
     {file = "charset_normalizer-2.1.1-py3-none-any.whl", hash = "sha256:83e9a75d1911279afd89352c68b45348559d1fc0506b054b346651b5e7fee29f"},
 ]
 idna = [
-    {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
-    {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
+    {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
+    {file = "idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
 ]
 isodate = [
     {file = "isodate-0.6.1-py2.py3-none-any.whl", hash = "sha256:0751eece944162659049d35f4f549ed815792b38793f07cf73381c1c87cbed96"},
