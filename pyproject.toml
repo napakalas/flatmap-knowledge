@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "flatmapknowledge"
-version = "1.1.7"
+version = "1.1.9"
 description = ""
 authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
-mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.11.8/mapknowledge-0.11.8-py3-none-any.whl"}
+mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.11.9/mapknowledge-0.11.9-py3-none-any.whl"}
+#mapknowledge = {path = "../map-knowledge", develop = true}
