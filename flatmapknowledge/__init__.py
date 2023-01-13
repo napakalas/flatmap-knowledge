@@ -80,10 +80,10 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
     #==============================
         self.db.execute('begin')
         self.db.execute('replace into flatmaps(id, models, created) values (?, ?, ?)',
-            (flatmap.id, flatmap.models, flatmap.created))
-        self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.id, ))
+            (flatmap.uuid, flatmap.models, flatmap.created))
+        self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.uuid, ))
         self.db.executemany('insert into flatmap_entities(flatmap, entity) values (?, ?)',
-            ((flatmap.id, entity) for entity in flatmap.entities))
+            ((flatmap.uuid, entity) for entity in flatmap.entities))
         self.db.commit()
 
     def flatmap_entities(self, flatmap):
@@ -93,7 +93,7 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
             select.append('where flatmap=?')
         select.append('order by entity')
         if flatmap is not None:
-            return [row[0] for row in self.db.execute(' '.join(select), (flatmap,))]
+            return [row[0] for row in self.db.execute(' '.join(select), (flatmap.uuid,))]
         else:
             return [row[0] for row in self.db.execute(' '.join(select))]
 
