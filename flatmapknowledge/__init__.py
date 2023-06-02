@@ -64,9 +64,10 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
                              read_only=False,
                              scicrunch_release=scicrunch_release
                              )
-            self.db.executescript(FLATMAP_SCHEMA)
-            if read_only:
-                super().open(read_only=True)
+            if self.db is not None:
+                self.db.executescript(FLATMAP_SCHEMA)
+                if read_only:
+                    super().open(read_only=True)
         else:
             super().__init__(store_directory,
                              knowledge_base=knowledge_base,
@@ -78,23 +79,25 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
 
     def add_flatmap(self, flatmap):
     #==============================
-        self.db.execute('begin')
-        self.db.execute('replace into flatmaps(id, models, created) values (?, ?, ?)',
-            (flatmap.uuid, flatmap.models, flatmap.created))
-        self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.uuid, ))
-        self.db.executemany('insert into flatmap_entities(flatmap, entity) values (?, ?)',
-            ((flatmap.uuid, entity) for entity in flatmap.entities))
-        self.db.commit()
+        if self.db is not None:
+            self.db.execute('begin')
+            self.db.execute('replace into flatmaps(id, models, created) values (?, ?, ?)',
+                (flatmap.uuid, flatmap.models, flatmap.created))
+            self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.uuid, ))
+            self.db.executemany('insert into flatmap_entities(flatmap, entity) values (?, ?)',
+                ((flatmap.uuid, entity) for entity in flatmap.entities))
+            self.db.commit()
 
     def flatmap_entities(self, flatmap):
     #===================================
-        select = ['select distinct entity from flatmap_entities']
-        if flatmap is not None:
-            select.append('where flatmap=?')
-        select.append('order by entity')
-        if flatmap is not None:
-            return [row[0] for row in self.db.execute(' '.join(select), (flatmap.uuid,))]
-        else:
-            return [row[0] for row in self.db.execute(' '.join(select))]
+        if self.db is not None:
+            select = ['select distinct entity from flatmap_entities']
+            if flatmap is not None:
+                select.append('where flatmap=?')
+            select.append('order by entity')
+            if flatmap is not None:
+                return [row[0] for row in self.db.execute(' '.join(select), (flatmap.uuid,))]
+            else:
+                return [row[0] for row in self.db.execute(' '.join(select))]
 
 #===============================================================================
