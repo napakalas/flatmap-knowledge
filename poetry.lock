@@ -122,12 +122,12 @@ six = "*"
 
 [[package]]
 name = "mapknowledge"
-version = "0.15.0a1"
+version = "0.15.0"
 description = ""
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "mapknowledge-0.15.0a1-py3-none-any.whl", hash = "sha256:674b4630978128dfc25bbe6f9baabb2e4497d76900ec5d1d594f909445afcbc3"},
+    {file = "mapknowledge-0.15.0-py3-none-any.whl", hash = "sha256:1ed8b5f6f06b1cb39d04eb46862b13000da99750abdbf3c2a0479ce19eedcb22"},
 ]
 
 [package.dependencies]
@@ -138,7 +138,7 @@ sparqlwrapper = ">=2.0.0,<3.0.0"
 
 [package.source]
 type = "url"
-url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.15.0-a.1/mapknowledge-0.15.0a1-py3-none-any.whl"
+url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.15.0/mapknowledge-0.15.0-py3-none-any.whl"
 
 [[package]]
 name = "networkx"
@@ -265,4 +265,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4.0"
-content-hash = "4b066e87eaad011803b36b9388c9275c2275a70b733482c3148d512c251ad0fa"
+content-hash = "3d5db4cb9d802b26c1dbce136ce139ea6c35f73b1d56791b9f13ff48c22b1b1b"
