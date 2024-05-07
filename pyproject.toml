@@ -6,4 +6,4 @@ authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
-mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.16.9/mapknowledge-0.16.9-py3-none-any.whl"}
+mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.17.0/mapknowledge-0.17.0-py3-none-any.whl"}

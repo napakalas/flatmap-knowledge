@@ -52,17 +52,16 @@ FLATMAP_SCHEMA = """
 #===============================================================================
 
 class KnowledgeStore(mapknowledge.KnowledgeStore):
-    def __init__(self, store_directory, knowledge_base=KNOWLEDGE_BASE,
-        sckan_version='production', clean_connectivity=False, create=True, read_only=False,
-        **kwds):
+    def __init__(self, store_directory, knowledge_base=KNOWLEDGE_BASE, create=True, read_only=False,
+        clean_connectivity=False, sckan_version='production', **kwds):
         new_db = not Path(store_directory, knowledge_base).resolve().exists()
         scicrunch_release = SCICRUNCH_PRODUCTION if sckan_version=='production' else SCICRUNCH_STAGING
         if create and new_db:
             super().__init__(store_directory,
                              knowledge_base=knowledge_base,
-                             clean_connectivity=clean_connectivity,
                              create=create,
                              read_only=False,
+                             clean_connectivity=clean_connectivity,
                              scicrunch_release=scicrunch_release,
                              **kwds)
             if self.db is not None:
@@ -72,9 +71,9 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
         else:
             super().__init__(store_directory,
                              knowledge_base=knowledge_base,
-                             clean_connectivity=clean_connectivity,
                              create=create,
                              read_only=read_only,
+                             clean_connectivity=clean_connectivity,
                              scicrunch_release=scicrunch_release,
                              **kwds)
 
