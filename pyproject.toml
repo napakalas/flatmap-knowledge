@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flatmapknowledge"
-version = "1.7.1"
+version = "1.8.0"
 description = ""
 authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 
