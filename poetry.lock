@@ -727,12 +727,12 @@ source = ["Cython (>=3.0.10)"]
 
 [[package]]
 name = "mapknowledge"
-version = "0.18.0"
+version = "0.18.1"
 description = ""
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "mapknowledge-0.18.0-py3-none-any.whl", hash = "sha256:54b2f02bfe9a1f9cd54f78efb7eb668290cf76a6f9124d040305d4bedd64e002"},
+    {file = "mapknowledge-0.18.1-py3-none-any.whl", hash = "sha256:d854b9bab4492fadee221c9649c916032227878848dcdd7df85e8e8c393ae046"},
 ]
 
 [package.dependencies]
@@ -744,7 +744,7 @@ sparqlwrapper = ">=2.0.0,<3.0.0"
 
 [package.source]
 type = "url"
-url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.18.0/mapknowledge-0.18.0-py3-none-any.whl"
+url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.18.1/mapknowledge-0.18.1-py3-none-any.whl"
 
 [[package]]
 name = "nest-asyncio"
@@ -1443,4 +1443,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4.0"
-content-hash = "f93eda474c49758935603e8d476a5800dcf87df55b18d77e1c3f086c29169237"
+content-hash = "f121d2829c1b7b632f94e6e222792a251bf17bf5f55967b6abd29301caca476d"
