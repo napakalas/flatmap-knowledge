@@ -37,7 +37,6 @@ KNOWLEDGE_BASE = 'knowledgebase.db'
 #===============================================================================
 
 FLATMAP_SCHEMA = """
-    begin;
     -- will auto convert datetime.datetime objects
     create table flatmaps(id text primary key, models text, created timestamp);
     create unique index flatmaps_index on flatmaps(id);
@@ -46,7 +45,6 @@ FLATMAP_SCHEMA = """
     create table flatmap_entities (flatmap text, entity text);
     create index flatmap_entities_flatmap_index on flatmap_entities(flatmap);
     create index flatmap_entities_entity_index on flatmap_entities(entity);
-    commit;
 """
 
 #===============================================================================
@@ -68,6 +66,7 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
                              **kwds)
             if self.db is not None:
                 self.db.executescript(FLATMAP_SCHEMA)
+                self.db.commit()
                 if read_only:
                     super().open(read_only=True)
         else:
@@ -83,7 +82,6 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
     def add_flatmap(self, flatmap):
     #==============================
         if self.db is not None:
-            self.db.execute('begin')
             self.db.execute('replace into flatmaps(id, models, created) values (?, ?, ?)',
                 (flatmap.uuid, flatmap.models, flatmap.created))
             self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.uuid, ))
