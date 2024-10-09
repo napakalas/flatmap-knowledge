@@ -38,7 +38,7 @@ KNOWLEDGE_BASE = 'knowledgebase.db'
 
 FLATMAP_SCHEMA = """
     -- will auto convert datetime.datetime objects
-    create table flatmaps(id text primary key, models text, created timestamp);
+    create table flatmaps(id text primary key, models text, created datetime, knowledge_source text);
     create unique index flatmaps_index on flatmaps(id);
     create index flatmaps_models_index on flatmaps(models);
 
@@ -79,11 +79,11 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
                              sckan_version=sckan_version,
                              **kwds)
 
-    def add_flatmap(self, flatmap):
-    #==============================
+    def add_flatmap(self, flatmap, knowledge_source=None):
+    #=====================================================
         if self.db is not None:
-            self.db.execute('replace into flatmaps(id, models, created) values (?, ?, ?)',
-                (flatmap.uuid, flatmap.models, flatmap.created))
+            self.db.execute('replace into flatmaps(id, models, created, knowledge_source) values (?, ?, ?)',
+                (flatmap.uuid, flatmap.models, flatmap.created, knowledge_source))
             self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.uuid, ))
             self.db.executemany('insert into flatmap_entities(flatmap, entity) values (?, ?)',
                 ((flatmap.uuid, entity) for entity in flatmap.entities))
