@@ -47,6 +47,15 @@ FLATMAP_SCHEMA = """
     create index flatmap_entities_entity_index on flatmap_entities(entity);
 """
 
+## Need to manually run when upgrading:
+"""
+alter table flatmaps add knowledge_source text;
+alter table flatmaps add column dt datetime;
+update flatmaps set dt = created;
+alter table flatmaps drop column created;
+alter table flatmaps rename column dt to created;
+"""
+
 #===============================================================================
 
 class KnowledgeStore(mapknowledge.KnowledgeStore):
