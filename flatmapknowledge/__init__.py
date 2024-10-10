@@ -91,7 +91,7 @@ class KnowledgeStore(mapknowledge.KnowledgeStore):
     def add_flatmap(self, flatmap, knowledge_source=None):
     #=====================================================
         if self.db is not None:
-            self.db.execute('replace into flatmaps(id, models, created, knowledge_source) values (?, ?, ?)',
+            self.db.execute('replace into flatmaps(id, models, created, knowledge_source) values (?, ?, ?, ?)',
                 (flatmap.uuid, flatmap.models, flatmap.created, knowledge_source))
             self.db.execute('delete from flatmap_entities where flatmap=?', (flatmap.uuid, ))
             self.db.executemany('insert into flatmap_entities(flatmap, entity) values (?, ?)',
