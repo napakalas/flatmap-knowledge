@@ -388,13 +388,13 @@ grpcio-gcp = ["grpcio-gcp (>=0.2.2,<1.0.dev0)"]
 
 [[package]]
 name = "google-api-python-client"
-version = "2.153.0"
+version = "2.154.0"
 description = "Google API Client Library for Python"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google_api_python_client-2.153.0-py2.py3-none-any.whl", hash = "sha256:6ff13bbfa92a57972e33ec3808e18309e5981b8ca1300e5da23bf2b4d6947384"},
-    {file = "google_api_python_client-2.153.0.tar.gz", hash = "sha256:35cce8647f9c163fc04fb4d811fc91aae51954a2bdd74918decbe0e65d791dd2"},
+    {file = "google_api_python_client-2.154.0-py2.py3-none-any.whl", hash = "sha256:a521bbbb2ec0ba9d6f307cdd64ed6e21eeac372d1bd7493a4ab5022941f784ad"},
+    {file = "google_api_python_client-2.154.0.tar.gz", hash = "sha256:1b420062e03bfcaa1c79e2e00a612d29a6a934151ceb3d272fe150a656dc8f17"},
 ]
 
 [package.dependencies]
@@ -743,12 +743,12 @@ source = ["Cython (>=3.0.11)"]
 
 [[package]]
 name = "mapknowledge"
-version = "0.20.2"
+version = "0.20.3"
 description = ""
 optional = false
 python-versions = ">=3.12,<4.0"
 files = [
-    {file = "mapknowledge-0.20.2-py3-none-any.whl", hash = "sha256:6cb3ea87ea5858858e18ed4071ec293616315cace4f7f8d954c335a60d17d23a"},
+    {file = "mapknowledge-0.20.3-py3-none-any.whl", hash = "sha256:5604f3c7526adbd09c678e126d1ea006ad1c7be05d27e543130779e96708b598"},
 ]
 
 [package.dependencies]
@@ -762,7 +762,7 @@ structlog = ">=24.4.0,<25.0.0"
 
 [package.source]
 type = "url"
-url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.20.2/mapknowledge-0.20.2-py3-none-any.whl"
+url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.20.3/mapknowledge-0.20.3-py3-none-any.whl"
 
 [[package]]
 name = "markdown-it-py"
@@ -1558,4 +1558,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12,<4.0"
-content-hash = "a432b5ae656d71b3b3d0955ab3b2c4e2f0bb68dfeca17f3aa0e69718df2f16fb"
+content-hash = "5db141fba04c0707ce54ccd1a080320e7f4b9f294fd7e6e34bac024c68996768"
