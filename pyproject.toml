@@ -7,3 +7,7 @@ authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
 mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.21.0/mapknowledge-0.21.0-py3-none-any.whl"}
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
