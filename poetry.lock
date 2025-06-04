@@ -754,13 +754,13 @@ source = ["Cython (>=3.0.11,<3.1.0)"]
 
 [[package]]
 name = "mapknowledge"
-version = "1.0.0"
+version = "1.1.0"
 description = ""
 optional = false
 python-versions = ">=3.12,<4.0"
 groups = ["main"]
 files = [
-    {file = "mapknowledge-1.0.0-py3-none-any.whl", hash = "sha256:67901a5fded44e9f9ac0763d246112d4fb8205f28b1c3b214177f37e3dd36c15"},
+    {file = "mapknowledge-1.1.0-py3-none-any.whl", hash = "sha256:71bcd42116a46b50247d586982b642367293a4b7161c2831981ce7c59ef299f3"},
 ]
 
 [package.dependencies]
@@ -776,7 +776,7 @@ structlog = ">=24.4.0,<25.0.0"
 
 [package.source]
 type = "url"
-url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v1.0.0/mapknowledge-1.0.0-py3-none-any.whl"
+url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v1.1.0/mapknowledge-1.1.0-py3-none-any.whl"
 
 [[package]]
 name = "markdown-it-py"
@@ -1751,4 +1751,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "8305cd314a66b6d331589cd022de05d851d6e284baf266c2128945f720e169a0"
+content-hash = "8a0be85b826fc4063cd335ed08444f478574b0adb3853db9bc24315cc3f169a6"
