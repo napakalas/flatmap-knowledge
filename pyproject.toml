@@ -1,13 +1,18 @@
-[tool.poetry]
+[project]
 name = "flatmapknowledge"
 version = "2.3.0"
 description = ""
-authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
-
-[tool.poetry.dependencies]
-python = ">=3.12,<4.0"
-mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v1.1.0/mapknowledge-1.1.0-py3-none-any.whl"}
+authors = [
+    { name = "David Brooks", email = "d.brooks@auckland.ac.nz"},
+]
+requires-python = "==3.12.*"
+dependencies = [
+    "mapknowledge @ https://github.com/AnatomicMaps/map-knowledge/releases/download/v1.1.0/mapknowledge-1.1.0-py3-none-any.whl",
+]
 
 [build-system]
-requires = ["poetry_core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
