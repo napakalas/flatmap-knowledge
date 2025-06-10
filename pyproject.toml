@@ -1,13 +1,13 @@
 [project]
 name = "flatmapknowledge"
-version = "2.3.0"
+version = "2.4.0"
 description = ""
 authors = [
     { name = "David Brooks", email = "d.brooks@auckland.ac.nz"},
 ]
 requires-python = "==3.12.*"
 dependencies = [
-    "mapknowledge @ https://github.com/AnatomicMaps/map-knowledge/releases/download/v1.1.0/mapknowledge-1.1.0-py3-none-any.whl",
+    "mapknowledge @ https://github.com/AnatomicMaps/map-knowledge/releases/download/v1.2.0/mapknowledge-1.2.0-py3-none-any.whl",
 ]
 
 [build-system]
